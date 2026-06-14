@@ -23,12 +23,12 @@ public class AdviceController {
 
     @ExceptionHandler(ExpiredJwtException.class)
     public ResponseEntity<ExceptionResponse> handleExpiredJwt(ExpiredJwtException ex) {
-        return buildResponse(HttpStatus.UNAUTHORIZED, "Token expirado");
+        return buildResponse(HttpStatus.UNAUTHORIZED, "Token expired");
     }
 
     @ExceptionHandler(JwtException.class)
     public ResponseEntity<ExceptionResponse> handleJwtException(JwtException ex) {
-        return buildResponse(HttpStatus.UNAUTHORIZED, "Token inválido");
+        return buildResponse(HttpStatus.UNAUTHORIZED, "Invalid token data");
     }
 
     @ExceptionHandler(BadCredentialsException.class)
